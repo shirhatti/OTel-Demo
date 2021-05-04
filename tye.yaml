@@ -1,0 +1,10 @@
+name: demo
+
+services:
+- name: webapp
+  project: src/webapp/webapp.csproj
+- name: zipkin
+  image: openzipkin/zipkin
+  bindings:
+  - port: 9411
+    connectionString: "${host}:${port}"
